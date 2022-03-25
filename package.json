@@ -1,0 +1,24 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "A service where you can find movies and save them in your account",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreibelyun/movies-explorer-api.git"
+  },
+  "author": "Andrey Belyun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreibelyun/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/andreibelyun/movies-explorer-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
