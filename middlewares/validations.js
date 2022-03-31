@@ -1,6 +1,15 @@
 const { celebrate, Joi } = require('celebrate');
 
-const linkRegEx = 'def';
+const linkRegEx = /^((http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-/])*)?/;
+
+// const rex = new RegExp(
+//   `^((http|https):\/\/)?
+//   (www\.)?
+//   ([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9-]*\.?)*
+//   \.{1}
+//   [A-Za-zА-Яа-я0-9-]{2,8}
+//   (\/([\w#!:.?+=&%@!\-\/])*)?`
+// );
 
 const validateRegisterData = celebrate({
   body: Joi.object().keys({
