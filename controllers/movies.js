@@ -35,8 +35,7 @@ const createMovie = (req, res, next) => {
     nameRU,
     thumbnail,
     movieId,
-    // owner: req.user._id,
-    owner: 2141414124124124,
+    owner: req.user._id,
   })
     .then((createdMovie) => {
       res.status(201).send(createdMovie);

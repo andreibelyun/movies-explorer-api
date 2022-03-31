@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const { createUser, login } = require('./controllers/users');
 const errorHandler = require('./middlewares/errorHandler');
+const auth = require('./middlewares/auth');
 const { moviesRoutes } = require('./routes/movies');
 const { userRoutes } = require('./routes/users');
 
@@ -15,10 +17,10 @@ mongoose.connect('mongodb://localhost:27017/myfilmsdb', {
 
 app.use(express.json());
 
-// app.use('signup');
-// app.use('signin');
+app.use('signup', createUser);
+app.use('signin', login);
 
-// app.use(auth);
+app.use(auth);
 
 app.use('/users', userRoutes);
 app.use('/movies', moviesRoutes);
