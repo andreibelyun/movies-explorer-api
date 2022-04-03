@@ -2,15 +2,6 @@ const { celebrate, Joi } = require('celebrate');
 
 const linkRegEx = /^((http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-/])*)?/;
 
-// const rex = new RegExp(
-//   `^((http|https):\/\/)?
-//   (www\.)?
-//   ([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9-]*\.?)*
-//   \.{1}
-//   [A-Za-zА-Яа-я0-9-]{2,8}
-//   (\/([\w#!:.?+=&%@!\-\/])*)?`
-// );
-
 const validateRegisterData = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -41,9 +32,9 @@ const validateMovieData = celebrate({
     year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().pattern(linkRegEx),
-    trailerLink: Joi.string().required().pattern(linkRegEx),
+    trailer: Joi.string().required().pattern(linkRegEx),
     thumbnail: Joi.string().required().pattern(linkRegEx),
-    movieId: Joi.number().required(), // type?
+    movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }),
