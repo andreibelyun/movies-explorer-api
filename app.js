@@ -15,11 +15,10 @@ mongoose.connect(DB_ADRESS, {
   useUnifiedTopology: true,
 });
 
+app.use(requestLogger);
 app.use(limiter);
-
 app.use(cors());
 app.use(express.json());
-app.use(requestLogger);
 
 app.use(routes);
 
