@@ -6,11 +6,11 @@ const { limiter } = require('./middlewares/limiter');
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { routes } = require('./routes');
-const { PORT, DB_NAME } = require('./utils/config');
+const { PORT, DB_ADRESS } = require('./utils/config');
 
 const app = express();
 
-mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`, {
+mongoose.connect(DB_ADRESS, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
