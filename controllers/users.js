@@ -43,9 +43,9 @@ const updateUserInfo = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError(INCORRECT_UPDATE_USER_DATA_MSG));
-      } else {
-        next(err);
-      }
+      } else if (err.code === 11000) {
+        next(new ConflictError(USER_ALREADY_EXISTS_MSG));
+      } else next(err);
     });
 };
 
@@ -63,8 +63,7 @@ const createUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError(INCORRECT_USER_DATA_MSG));
-      }
-      if (err.code === 11000) {
+      } else if (err.code === 11000) {
         next(new ConflictError(USER_ALREADY_EXISTS_MSG));
       } else next(err);
     });
