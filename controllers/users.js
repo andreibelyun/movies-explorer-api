@@ -16,10 +16,8 @@ const getUserInfo = (req, res, next) => {
   User.findById(id)
     .orFail(new NotFoundError(USER_NOT_FOUND_MSG))
     .then((userData) => {
-      res.status(200).send({
-        email: userData.email,
-        name: userData.name,
-      });
+      const { name, email, _id } = userData;
+      res.status(200).send({ name, email, _id });
     })
     .catch(next);
 };
