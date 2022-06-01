@@ -10,7 +10,7 @@ const {
 const getMovies = (req, res, next) => {
   Movie.find({})
     .then((movies) => {
-      res.status(200).send(movies);
+      res.status(200).send(movies.filter((movie) => movie.owner.toString() === req.user._id));
     })
     .catch(next);
 };
