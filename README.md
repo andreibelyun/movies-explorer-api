@@ -18,30 +18,20 @@
 `npm run dev` — запускает сервер с hot-reload
 
 ## Функциональность
+ 
+`GET /users/me` - возвращает информацию о пользователе (email и имя)
 
-# возвращает информацию о пользователе (email и имя)
-GET /users/me
+`PATCH /users/me` - обновляет информацию о пользователе (email и имя)
+ 
+`GET /movies` - возвращает все сохранённые текущим  пользователем фильмы
 
-# обновляет информацию о пользователе (email и имя)
-PATCH /users/me
+`POST /movies` - создаёт фильм с переданными в теле: country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail, movieId
 
-# возвращает все сохранённые текущим  пользователем фильмы
-GET /movies
+`DELETE /movies/_id` - удаляет сохранённый фильм по id
 
-# создаёт фильм с переданными в теле:
-# country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail, movieId
-POST /movies
+`POST /signup` - создаёт пользователя с переданными в теле: email, password и name
 
-# удаляет сохранённый фильм по id
-DELETE /movies/_id
-
-# создаёт пользователя с переданными в теле
-# email, password и name
-POST /signup
-
-# проверяет переданные в теле почту и пароль
-# и возвращает JWT
-POST /signin
+`POST /signin` - проверяет переданные в теле почту и пароль и возвращает JWT
 
 ## Адрес сервера
 
