@@ -57,4 +57,4 @@
 * http://api.saveme.nomoredomains.xyz
 * https://api.saveme.nomoredomains.xyz
 
-Публичный IP-адрес сервера: 51.250.72.182
+Публичный IP-адрес сервера: 51.250.90.111
